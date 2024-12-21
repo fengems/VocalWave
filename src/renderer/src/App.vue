@@ -1,26 +1,37 @@
 <script setup lang="ts">
-import Versions from './components/Versions.vue'
-
-const ipcHandle = () => window.electron.ipcRenderer.send('ping')
+// 如果需要路由相关功能可以从vue-router导入
+import { RouterView, RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <img alt="logo" class="logo" src="./assets/electron.svg" />
-  <div class="creator">Powered by electron-vite</div>
-  <div class="text">
-    Build an Electron app with
-    <span class="vue">Vue</span>
-    and
-    <span class="ts">TypeScript</span>
+  <div class="app">
+    <!-- 导航栏 -->
+    <nav>
+      <RouterLink to="/">首页</RouterLink> |
+      <RouterLink to="/setting">设置</RouterLink>
+    </nav>
+
+    <!-- 路由出口 -->
+    <RouterView />
   </div>
-  <p class="tip">Please try pressing <code>F12</code> to open the devTool</p>
-  <div class="actions">
-    <div class="action">
-      <a href="https://electron-vite.org/" target="_blank" rel="noreferrer">Documentation</a>
-    </div>
-    <div class="action">
-      <a target="_blank" rel="noreferrer" @click="ipcHandle">Send IPC</a>
-    </div>
-  </div>
-  <Versions />
 </template>
+
+<style>
+.app {
+  padding: 20px;
+}
+
+nav {
+  padding: 20px 0;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+nav a.router-link-active {
+  color: #42b983;
+}
+</style>
