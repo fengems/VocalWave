@@ -13,9 +13,12 @@ function createWindow(): void {
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
-    }
+      sandbox: false,
+    },
   })
+
+  // Set dock icon (macOS)
+  app.dock.setIcon(icon)
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()

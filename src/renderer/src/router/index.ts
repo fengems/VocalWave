@@ -5,16 +5,22 @@ const routes = [
   {
     path: '/',
     component: Layout,
+    redirect: '/home',
     children: [
       {
-        path: '',
+        path: '/home',
         name: 'Home',
-        component: () => import('../views/home/index.vue'),
+        component: () => import('../views/Home/index.vue'),
+      },
+      {
+        path: '/file-import',
+        name: 'FileImport',
+        component: () => import('../views/FileImport/index.vue'),
       },
       {
         path: '/setting',
         name: 'Setting',
-        component: () => import('../views/setting/index.vue'),
+        component: () => import('../views/Setting/index.vue'),
       },
     ],
   },

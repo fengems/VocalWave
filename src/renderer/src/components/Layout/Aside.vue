@@ -1,7 +1,7 @@
 <template>
   <aside class="layout-sidebar">
-    <RouterLink class="menu" to="/">文本</RouterLink>
-    <RouterLink class="menu" to="/fileImport">文件导入</RouterLink>
+    <RouterLink class="menu" to="/home">文本</RouterLink>
+    <RouterLink class="menu" to="/file-import">文件导入</RouterLink>
     <RouterLink class="menu" to="/setting">设置</RouterLink>
   </aside>
 </template>
