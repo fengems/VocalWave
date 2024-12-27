@@ -5,12 +5,6 @@ import { RouterView, RouterLink } from 'vue-router'
 
 <template>
   <div class="app">
-    <!-- 导航栏 -->
-    <nav>
-      <RouterLink to="/">首页</RouterLink> |
-      <RouterLink to="/setting">设置</RouterLink>
-    </nav>
-
     <!-- 路由出口 -->
     <RouterView />
   </div>
@@ -18,7 +12,10 @@ import { RouterView, RouterLink } from 'vue-router'
 
 <style>
 .app {
-  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
 }
 
 nav {
